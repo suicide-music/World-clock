@@ -28,6 +28,12 @@ select {
   border-radius: 5px;
 }
 
+hr {
+  color: var(--border-color);
+  opacity: 0.5;
+  margin: 10px;
+}
+
 footer {
   text-align: center;
   margin-top: -35px;
