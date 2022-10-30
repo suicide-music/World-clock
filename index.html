@@ -5,39 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World clock</title>
-    <link rel="styleshett" href="src/style.css" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <h1>World clocks</h1>
-      <select>
-        <option>Choose City</option>
-        <option>Vilnius</option>
-        <option>London</option>
-        <option>Tokyo</option>
-        <option>Ulan Bator</option>
-      </select>
-
-      <div>
-        <div>
-          <h3>Vilnius</h3>
-          <p>date</p>
-          <p>time</p>
+      <div class="row">
+        <div class="column">
+          <img
+            src="https://images.unsplash.com/photo-1541480601022-2308c0f02487?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            width="400px"
+          />
         </div>
-        <div>
-          <h3>Vilnius</h3>
-          <p>date</p>
-          <p>time</p>
+        <div class="column">
+          <select>
+            <option>Choose City</option>
+            <option>Vilnius</option>
+            <option>London</option>
+            <option>Tokyo</option>
+            <option>Ulan Bator</option>
+          </select>
+          <div class="row">
+            <div class="column current-city"><h3>Vilnius</h3></div>
+            <div class="column">
+              <p class="current-time">time</p>
+              <p class="current-date">date</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3>Vilnius</h3>
+      </div>
+      <div class="row">
+        <div class="column-secondary-city">
+          <h3 class="secondary-city">Vilnius</h3>
+          <p class="secondary-time">time</p>
           <p>date</p>
-          <p>time</p>
         </div>
-        <div>
-          <h3>Vilnius</h3>
+        <div class="column-secondary-city">
+          <h3 class="secondary-city">Vilnius</h3>
+          <p class="secondary-time">time</p>
           <p>date</p>
-          <p>time</p>
         </div>
       </div>
     </div>
