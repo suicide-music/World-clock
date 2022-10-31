@@ -4,35 +4,14 @@ function updateTime() {
   mainTime.innerHTML = currentTime;
 }
 
-function showTime(event) {
-  let selectedCity = event.target.value;
+function changeCity(event) {
+  let selectedTimeZone = event.target.value;
   let cityName = document.querySelector("#main-city");
+  cityName.innerHTML = selectedTimeZone.split("/")[1];
   let cityDate = document.querySelector("#main-current-date");
   let cityTime = document.querySelector("#main-current-time");
-
-  if (selectedCity == "London") {
-    cityName.innerHTML = selectedCity;
-    cityTime.innerHTML = moment().tz("Europe/London").format("HH:mm:ss");
-    cityDate = moment().tz("Europe/London").format("Do MMMM YYYY");
-  } else {
-    if (selectedCity == "Tokyo") {
-      cityName.innerHTML = selectedCity;
-      cityTime.innerHTML = moment().tz("Asia/Tokyo").format("HH:mm:ss");
-      cityDate = moment().tz("Asia/Tokyo").format("Do MMMM YYYY");
-    } else {
-      if (selectedCity == "Ulaanbaatar") {
-        cityName.innerHTML = selectedCity;
-        cityTime.innerHTML = moment().tz("Asia/Ulaanbaatar").format("HH:mm:ss");
-        cityDate = moment().tz("Asia/Ulaanbaatar").format("Do MMMM YYYY");
-      } else {
-        if (selectedCity == "Vilnius") {
-          cityName.innerHTML = selectedCity;
-          cityTime.innerHTML = moment().tz("Europe/Vilnius").format("HH:mm:ss");
-          cityDate = moment().tz("Europe/Vilnius").format("Do MMMM YYYY");
-        }
-      }
-    }
-  }
+  cityTime.innerHTML = moment().tz(selectedTimeZone).format("HH:mm:ss");
+  cityDate = moment().tz(selectedTimeZone).format("Do MMMM YYYY");
 }
 
 let userTimeZoneName = document.querySelector("#user-city");
@@ -46,4 +25,4 @@ updateTime();
 setInterval(updateTime, 1000);
 
 let selectElement = document.querySelector("select");
-selectElement.addEventListener("change", showTime);
+selectElement.addEventListener("change", changeCity);
