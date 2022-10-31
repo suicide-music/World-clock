@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>World clock</title>
+    <title>🕒 World clock</title>
     <link rel="stylesheet" href="src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
         </div>
         <div class="column">
           <select>
-            <option>Choose City</option>
+            <option value="Europe/Vilnius">Choose City</option>
             <option value="Europe/Vilnius">Vilnius</option>
             <option value="Europe/London">London</option>
             <option value="Asia/Tokyo">Tokyo</option>
@@ -37,7 +37,7 @@
             <div class="column current-city">
               <h3 id="main-city">Vilnius</h3>
             </div>
-            <div class="column">
+            <div class="column current-time-date">
               <p class="current-time" id="main-current-time"></p>
               <p class="current-date" id="main-current-date"></p>
             </div>
@@ -47,13 +47,18 @@
       <hr />
       <div class="row">
         <div class="column-secondary-city">
-          <h3 class="secondary-city" id="user-city">Current location:</h3>
+          <h3 class="secondary-city" id="user-city">📍Current location:</h3>
           <p class="secondary-time" id="user-time"></p>
-          <p id="user-date"></p>
+          <p id="user-date" class="secondary-date"></p>
         </div>
       </div>
     </div>
-    <footer>Coded by Viktorija</footer>
+    <footer>
+      Coded by
+      <a href="https://www.linkedin.com/in/viktorija-koluzajeva/">Viktorija</a>
+      <br />
+      <a href="https://github.com/suicide-music/World-clock">GitHub </a>
+    </footer>
 
     <script src="src/javascript.js"></script>
   </body>

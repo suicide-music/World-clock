@@ -33,6 +33,12 @@ hr {
   opacity: 0.5;
   margin: 10px;
 }
+a {
+  color: var(--border-color);
+}
+a:visited {
+  color: var(--border-color);
+}
 
 footer {
   text-align: center;
@@ -41,7 +47,11 @@ footer {
 
 .column .current-city {
   display: block;
-  margin: 30px auto;
+  margin: 50px auto;
+}
+
+.column .current-time-date {
+  margin: 30px;
 }
 
 .container {
@@ -52,6 +62,7 @@ footer {
   color: var(--border-color);
   background-color: var(--primary-color);
   border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .row {
@@ -85,5 +96,10 @@ footer {
 }
 
 .secondary-time {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.secondary-date {
   font-size: 25px;
 }

@@ -1,7 +1,8 @@
 function updateTime() {
-  let mainTime = document.querySelector("#main-current-time");
-  let currentTime = moment().tz("Europe/Vilnius").format("HH:mm:ss");
-  mainTime.innerHTML = currentTime;
+  let userTime = document.querySelector("#user-time");
+  let userTimeZone = moment.tz.guess();
+  let currentTime = moment().tz(userTimeZone).format("HH:mm:ss");
+  userTime.innerHTML = currentTime;
 }
 
 function changeCity(event) {
@@ -10,16 +11,23 @@ function changeCity(event) {
   cityName.innerHTML = selectedTimeZone.split("/")[1];
   let cityDate = document.querySelector("#main-current-date");
   let cityTime = document.querySelector("#main-current-time");
-  cityTime.innerHTML = moment().tz(selectedTimeZone).format("HH:mm:ss");
-  cityDate = moment().tz(selectedTimeZone).format("Do MMMM YYYY");
+  cityTime.innerHTML = moment().tz(selectedTimeZone).format("HH:mm");
+  cityDate.innerHTML = moment().tz(selectedTimeZone).format("Do MMMM YYYY");
 }
 
 let userTimeZoneName = document.querySelector("#user-city");
 let userTimeZone = moment.tz.guess();
-userTimeZoneName.innerHTML = `Current location: ${userTimeZone}`;
+userTimeZoneName.innerHTML = `📍Current location: ${
+  userTimeZone.split("/")[1]
+}`;
+
+let userDate = document.querySelector("#user-date");
+userDate.innerHTML = moment().tz(userTimeZone).format("Do MMMM YYYY");
 
 let mainDate = document.querySelector("#main-current-date");
-let currentDate = moment().format("Do MMMM YYYY");
+let currentDate = moment().tz("Europe/Vilnius").format("Do MMMM YYYY");
+let mainTime = document.querySelector("#main-current-time");
+mainTime.innerHTML = moment().tz("Europe/Vilnius").format("HH:mm");
 mainDate.innerHTML = currentDate;
 updateTime();
 setInterval(updateTime, 1000);
